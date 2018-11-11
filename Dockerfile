@@ -4,7 +4,6 @@ RUN apk update && apk add bash curl
 WORKDIR /usr/src/app
 
 COPY . .
-RUN curl https://raw.githubusercontent.com/alwaysshrek/prudential-test/master/Dockerfile > Dockerfile
 
 RUN npm install
 
