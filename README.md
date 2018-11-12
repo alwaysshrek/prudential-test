@@ -9,3 +9,9 @@
   c. Deploy: Deploys the built docker image to the dev Environment
   d. All the above steps are in a try..catch block, which will mail the user if anything fails.
 6. The job is timed to run every 6 hours or based on every new commit(polled every 15 mins since no permissions to create push web hooks in original repo)
+
+If provided with additional time, I would have done one/some of the following things:
+* Would provision the EC2 instance and security groups through terraform.
+* If there would have been more environments, I would have provisioned an ECS cluster (for each) along with supporting AWS resources through Terraform.
+* Would have broken up the pipeline into separate jobs - manifest and deploy.
+* Would have put some testcases in the pipeline Test stage.
