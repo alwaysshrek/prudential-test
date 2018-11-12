@@ -8,12 +8,7 @@ sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 sudo yum install jenkins -y
 sudo service jenkins start
 
-sudo su - jenkins -c 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash'
-sudo su -
-export NVM_DIR="/root/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm install 6.14.4
-
 sudo yum -y install docker
 sudo adduser dev
 sudo usermod -a -G docker dev
+sudo usermod -a -G docker jenkins
