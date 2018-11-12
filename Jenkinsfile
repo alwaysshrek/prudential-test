@@ -25,8 +25,7 @@ node('') {
         #!/bin/bash -l
 
          curl https://raw.githubusercontent.com/alwaysshrek/prudential-test/master/Dockerfile > Dockerfile
-         OLD_IMAGES=`docker images | grep emoji-search | tr -s '[:space:]' | cut -d' ' -f3`
-         [[ -n \$OLD_IMAGES ]] && docker rmi \$OLD_IMAGES
+         docker image prune -a -f
          docker build . --no-cache --network=host --compress -t emoji-search:${revision}
         """
 
